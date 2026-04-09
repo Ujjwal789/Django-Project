@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Home Page
+{% endblock title %}
+
+{% block content %}
+<h1>This is first app</h1>
+
+<div class="grid grid-cols-4 gap-4 m-10">
+{% for chai in chais %}
+<div class="chai-item bg-blue-300 p-5 rounded-2xl">
+    <img class="rounded shadow-lg" src="{{ chai.image.url }}" alt="">
+    <h3 class = "text-green-700 text-3xl bg-blue-300">{{ chai.name }}</h3>
+    <a href="{% url 'chai_details' chai.id %}">
+   <button 
+    type="button"
+    class="bg-orange-600 text-white inline-flex items-center w-full px-4 py-2 rounded-lg shadow hover:bg-orange-700 transition cursor-pointer">
+    {{ chai.type }} - {{ chai.id }}
+  </button>
+    </a>
+</div>
+{% endfor %}
+</div>
+
+{% endblock content %}
