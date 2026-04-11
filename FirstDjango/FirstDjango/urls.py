@@ -12,5 +12,6 @@ urlpatterns = [
     path('contact/', Views.contact, name = 'contact'),
      path('first/', include('first.urls')),
      path("__reload__/", include("django_browser_reload.urls")),
+    #  path('', include('first.urls')), to enclude the urls of the main app 
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
